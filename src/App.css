@@ -9,14 +9,9 @@ html, body, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, f
 body
 {
   background-color: rgb(27, 26, 26) ;
-  height: 300vh;
+  height: 400vh;
   font-family: 'Titillium Web', sans-serif;
   position: relative;
-}
-p
-{
-  margin: 5% 10% 10% 10%;
-  text-align: left;
 }
 a
 {
@@ -44,46 +39,59 @@ a
     
 }
 
-/* AboutMe ********************************************************************************************************* */
+/* Container **************************************** */ 
+#container
+{
+  margin: 10vh 0;
+  display: grid;
+  grid-template-columns: 10vw 1fr 10vw;
+  grid-auto-flow: column;
+  grid-row-gap: 5em;
+}
+#container > * {
+  grid-column: 2 / -2;
+}
 
+
+/* AboutMe ********************************************************************************************************* */
 #Me
 {   
-  margin-top: 10vh;
-  margin-left: 10%;
-  margin-right: 10%;
-  display: grid;
+  display: grid;  
   grid-template-columns: 50% 50%;
-  
+  height: 35em;
 }
 /* Left  - WhoIam ***************************************************** */
 #whoIam
 {
-  background-color: rgb(27, 26, 26);
   color: rgb(203, 220, 241);
 }
 #whoIam_header 
 {
   display: flex;
   align-items: center;
-  height: 25%;
+  height: 10em;
   margin-left: 10%;
-  margin-top: 5%;
 }
 #whoIam_header img
 {
-  height: 90px;
-  width: 90px;
+  height: 7em;
+  width: 7em;
   border-radius: 11px 11px 11px 11px;
   border: 2px solid #363131;
 }
 #whoIam_header h2
 {
   text-align: left;
-  margin-left: 3%;
+  margin-left: 5%;
+}
+#whoIam p
+{
+  margin: 5% 10% 5% 10%;
+  text-align: left;
 }
 #arrow 
 {
-  margin-bottom: 20px;
+  margin-bottom: 20vh;
   margin-left: 40%;
   color: rgb(245, 234, 200) ; 
   text-align: center;
@@ -100,3 +108,28 @@ a
   background-color:rgb(0, 102, 255) ;
 }
 
+
+/*  Skills   **********************************************************  */
+#skills
+{
+  color:rgb(0, 102, 255);
+}
+.skill
+{
+  color:  rgb(203, 220, 241);  
+  display: flex;
+  align-items: center;
+  max-width: 30vw;
+  box-shadow: -7px 7px 12px -1px rgba(0,0,0,0.75);
+  padding: 0.5em;
+  border-radius: 5px;
+}
+.skill img
+{
+  height: 5vh;
+}
+.skill i
+{
+  text-align: left;
+  margin-left: 3%;
+}

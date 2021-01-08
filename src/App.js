@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
 import MyPhoto from './imagen/Myself.png';
+import iconC from './imagen/CSharp.png'
 
 function App() {
   return (
     <body>
       <Head />
-      <AboutMe />
-      <Skills />
-      <Projects />
+      <div id="container">
+        <AboutMe />
+        <Skills />
+        <Projects />
+      </div>
       <Information />
     </body>
   );
@@ -46,6 +49,10 @@ function WhoIam() {
         target="_blank" rel="noopener noreferrer">University of Turabo</a> and I reside inFlorida,
         USA. Expecting graduate in 2021, I work for be part of the developer community, learning
         every day new cool technologies.</p>
+      <p> I am a student of computerized information systems at the <a href="http://ut.suagm.edu"
+        target="_blank" rel="noopener noreferrer">University of Turabo</a> and I reside inFlorida,
+        USA. Expecting graduate in 2021, I work for be part of the developer community, learning
+        every day new cool technologies.</p>
       <p>Do you want to see what I'm doing? Let's take a look below.</p>
 
       <a id="arrow" href="#achievements"><i class="fas fa-arrow-right"></i></a>
@@ -65,7 +72,8 @@ function Certifications() {
 
 function Skills() {
   return (
-    <div>
+    <div id="skills">
+      <h1>Skills</h1>
       <Skill />
     </div>
   )
@@ -73,8 +81,9 @@ function Skills() {
 
 function Skill() {
   return (
-    <div>
-
+    <div class="skill">
+      <img src={iconC} alt="c sharp icon" />
+      <i>C# programing</i>
     </div>
   )
 }
