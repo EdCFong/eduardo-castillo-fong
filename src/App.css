@@ -46,7 +46,7 @@ a
   display: grid;
   grid-template-columns: 10vw 1fr 10vw;
   grid-auto-flow: column;
-  grid-row-gap: 5em;
+  grid-row-gap: 7em;
 }
 #container > * {
   grid-column: 2 / -2;
@@ -110,26 +110,111 @@ a
 
 
 /*  Skills   **********************************************************  */
-#skills
+#skillsSection
 {
   color:rgb(0, 102, 255);
 }
+#skills
+{
+  display: grid;
+  grid-template-columns: repeat(4,minmax(10vw, 30vw));
+  grid-auto-flow: row;
+  grid-gap: 2em;
+}
+  
 .skill
 {
   color:  rgb(203, 220, 241);  
   display: flex;
   align-items: center;
   max-width: 30vw;
-  box-shadow: -7px 7px 12px -1px rgba(0,0,0,0.75);
+  box-shadow: -7px 7px 9px -1px rgba(14, 13, 13, 0.75);
   padding: 0.5em;
   border-radius: 5px;
 }
 .skill img
 {
   height: 5vh;
+  width: 2.5vw;
+  border-radius: 5px; 
 }
 .skill i
 {
   text-align: left;
   margin-left: 3%;
+}
+
+/* Projects     ***************************************************************** */
+#projectsSection
+{
+  background-color:rgb(0, 102, 255) ;
+  height: 90vh;
+}
+#projectsSection h1
+{
+  color: rgb(203, 220, 241);
+  margin-left: 2vw;
+}
+#h2-moreProjects
+{
+ text-align: center;
+ margin-top: 8vh;
+ color:rgb(236, 222, 59) ;
+ font-weight: lighter;
+}
+#projects
+{
+ margin-top: 6vh;
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: space-around;
+}
+.project
+{
+  background-color: rgb(27, 26, 26) ;
+  width: 15vw; 
+  color: rgb(0, 102, 255);
+  box-shadow: -7px 7px 9px -5px rgba(14, 13, 13, 0.75);
+  border: 2px solid rgb(2, 16, 78);
+  border-radius: 5px;
+}
+.project :hover
+{
+
+}
+.project h2
+{
+  font-weight: lighter;
+  margin: 7px 5px 7px 15px;
+}
+.project div
+{
+  margin: 10px;
+  background:  rgb(174, 204, 240);
+  border: 1px solid rgb(2, 16, 78);
+  border-radius: 3px;
+  color: rgb(4, 13, 53);
+}
+.project img
+{
+  height:20vh;
+  width: 96%; 
+  margin: 2% 2% 0 2%;
+  border: 1px solid rgb(83, 141, 97);
+  border-radius: 3px;
+}
+.project ul
+{
+  list-style-type: square;
+  margin: 5px 7px 15px 25px;
+  padding: 0;
+}
+.project li
+{
+  text-align: left;
+  font-size: 15px;
+}
+.project a
+{
+  color:  rgb(0, 102, 255);
 }
