@@ -178,9 +178,68 @@ function Projects() {
 
 function Information() {
   return (
-    <div>
+    <footer id="information">
+      <h2>My profiles</h2>
+      <div id="social_media_box">
+      <div class="social_media">
+                <a href="https://www.linkedin.com/in/eduardo-castillo-fong-0aa094165/?locale=en_US">
+                    <img class="social_media_icon"
+                        src="https://lh3.googleusercontent.com/ZgT35mZzFo3Th14z6AvF6a1Jo9Ll7PLk5hKQRIE4Uxs0wT1mMNwJqmZnGLAuBU9cXhhDeu2qapYMbqwIj569goaVDyCgLf7q60oBajjbHOvc-dQjReno_v48-RTA-D457jRcTUvJXd4=w2400"
+                        alt="Linkedln icon"/>
+                </a>
+                <p class="text-center">Linkedln</p>
+            </div>
+    
+            <div class="social_media">
+                <a id="profile-link" href="https://github.com/EdCFong">
+                    <img id="Github_icon" class="social_media_icon"
+                        src="https://lh3.googleusercontent.com/70yrb8uXmdB28FpjfWFr5uqBdeJLyAwu6v6smhOUR8KYSddkKbPV1f-zaIiObTLWehjvLMHSgQXTuQHjxl-GBpzZBYhkXcO591_Hh6JxbBPULt2uuCxQl25fvQ7zbHAmY57BRaCst5I=w2400"
+                        alt="GitHub icon"/>
+                </a>
+                <p class="text-center">GitHub</p>
+            </div>
+    
+            <div class="social_media">
+                <a href="https://codepen.io/edcfong/">
+                    <img class="social_media_icon"
+                        src="https://lh3.googleusercontent.com/MAJjK7Fm8SBlJdfzloZmv-bqdFt1M1SPEUlvnlD4xjBKymBKvbfSrMOOMH3TSDltH6Jr4qaorSpBupDtNXp5lhlzdHTdikcq6tbeLMp7fkLoohmt0DznGTvndc-yHAy5-2KjRaactrM=w2400"
+                        alt="Codepen icon"/>
+                </a>
+                <p class="text-center">CodePen</p>
+            </div>
+    
+            <div class="social_media">
+                <a href="https://www.freecodecamp.org/fccc7d4b82a-4ffd-4221-b47a-212f1c605b97">
+                    <img id="FreeCodeCamp_icon" class="social_media_icon"
+                        src="https://lh3.googleusercontent.com/thjd6gfnGRv9ciCd2mFwhaabMeQ8jptQfQVaPWqv-sSzTtuuCeguuICXMH7qC-1hFP4orNwJVb8lAo3l0_mme0n6Z3qQrn7pNK44i43Y1xQMzryOJgSL1fUpqWlHkdKI2F62OG9-S3o=w2400"
+                        alt="FreeCodeCamp icon"/>
+                </a>
+                <p class="text-center">FreeCodeCamp</p>
+            </div>
+    
+            <div class="social_media">
+                <a href="https://www.hackerrank.com/eduardcf90">
+                    <img class="social_media_icon"
+                        src="https://lh3.googleusercontent.com/iCR_GJiPovWpluCWSI3X_JTr4laH5gOXZngHHNa2-sCePTIoXHc-3FDVmnzKlc4tQuFO1hQ_9ODLefVc6WpaRsjgApIQ5trsuRrpLKNyr1wp0R5eMXY_vKDg9olhEA8QXsImtPBnxJE=w2400"
+                        alt="HackerRank icon"/>
+                </a>
+                <p class="text-center">HackerRank</p>
+            </div>
+    
+            <div class="social_media">
+                <a href="https://www.sololearn.com/Profile/2399481">
+                    <img class="social_media_icon"
+                        src="https://lh3.googleusercontent.com/LaERs5TZPPkv_Po9LzbrqLSGJzCLBwkUv2MC5bIdaMA4uGdtfDnxAbzdPqra0io0iSqKbd5p_k_miPn0qInk9QItNGh3csTg_YdmBdkAopoRJBXQ-skR34cqb3DrqUz0eyBdKSIxVzU=w2400"
+                        alt="Sololearn icon"/>
+                </a>
+                <p class="text-center">Sololearn</p>
+            </div>
+      </div>
 
-    </div>
+
+
+      <h2>Contact me by <inline>eduardcf90@gmail.com</inline></h2>
+    </footer>
   )
 }
 
