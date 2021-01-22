@@ -15,12 +15,11 @@ import DateRemember_img from './imagen/Projects - DateRemember.png';
 import BestNumber_img from './imagen/Projects - BestNumber.png';
 import QuotesMachine_img from './imagen/Projects - FriendsQuotesMachine.png';
 import PomodoroClock_img from './imagen/Projects - Pomodoro Clock.png';
-import Codepen_img from './imagen/Profiles - Codepen.png';
+import Stackoverflow_img from './imagen/Profiles - Stack Overflow.png';
 import FCC_img from './imagen/Profiles - FreeCodeCamp.png';
 import Github_img from './imagen/Profiles - Github.png';
 import HackerRank_img from './imagen/Profiles - HackerRank.png';
 import Linkedin_img from './imagen/Profiles - Linkedin.png';
-import Sololearn_img from './imagen/Profiles - Sololearn.png';
 
 
 
@@ -42,7 +41,16 @@ function App() {
 function Head() {
   return (
     <div id="head">
-      <div id="presentationMessage">
+      <nav>
+          <ul>
+            <li><a href>Story</a></li>
+            <li><a href>Blog</a></li>
+            <li><a href>Tutorials</a></li>
+            <li><a href>Tools</a></li>
+            <li><a href>Linux</a></li>
+          </ul>
+        </nav>
+      <div id="presentationMessage">        
         <h1>Hi, I'm Eduardo Castillo Fong</h1>
         <h3><strong>&gt;_</strong> software developer and computer enthusiast</h3>
       </div>
@@ -194,7 +202,7 @@ function Information() {
               src={Linkedin_img}
               alt="Linkedln icon" />
           </a>
-          <p class="text-center">Linkedln</p>
+          <p>Linkedln</p>
         </div>
 
         <div class="social_media">
@@ -203,16 +211,16 @@ function Information() {
               src={Github_img}
               alt="GitHub icon" />
           </a>
-          <p class="text-center">GitHub</p>
+          <p>GitHub</p>
         </div>
 
         <div class="social_media">
-          <a href="https://codepen.io/edcfong/">
-            <img class="social_media_icon"
-              src={Codepen_img}
-              alt="Codepen icon" />
+          <a href="https://stackoverflow.com/users/15054658/eduardo-castillo-fong?tab=profile">
+            <img id="Stackoverflow_icon" class="social_media_icon"
+              src={Stackoverflow_img}
+              alt="Stack Overflow icon" />
           </a>
-          <p class="text-center">CodePen</p>
+          <p>Stack Overflow</p>
         </div>
 
         <div class="social_media">
@@ -221,7 +229,7 @@ function Information() {
               src={FCC_img}
               alt="FreeCodeCamp icon" />
           </a>
-          <p class="text-center">FreeCodeCamp</p>
+          <p>Free Code Camp</p>
         </div>
 
         <div class="social_media">
@@ -230,49 +238,40 @@ function Information() {
               src={HackerRank_img}
               alt="HackerRank icon" />
           </a>
-          <p class="text-center">HackerRank</p>
-        </div>
-
-        <div class="social_media">
-          <a href="https://www.sololearn.com/Profile/2399481">
-            <img class="social_media_icon"
-              src={Sololearn_img}
-              alt="Sololearn icon" />
-          </a>
-          <p class="text-center">Sololearn</p>
+          <p>Hacker Rank</p>
         </div>
       </div>
 
-      <h2>Contact me by <inline>eduardcf90@gmail.com</inline></h2>
+      <p id="contact">Contact me by <inline>eduardcf90@gmail.com</inline></p>
       <div id="moreLinks">
         <div id="personalInformation">
-          <strong>Information</strong>
+          <p>Information</p>
           <ul>
-            <li>Story</li>
-            <li>Path</li>
-            <li>All projects</li>
-            <li>All certifications</li>
-            <li>Work History</li>
+            <li><a href>Story</a></li>  
+            <li><a href>Path</a></li>
+            <li><a href>All projects</a></li>
+            <li><a href>All certifications</a></li>
+            <li><a href>Work History</a></li>
           </ul>
         </div>
         <div id="resources">
-          <strong>Resources</strong>
+          <p>Resources</p>
           <ul>
-            <li>tools</li>
-            <li>tutorials</li>
-            <li>Blog</li>
-            <li>Arduino projects</li>
-            <li>Linux</li>
+            <li><a href>Tools</a></li>
+            <li><a href>Tutorials</a></li>
+            <li><a href>Blog</a></li>
+            <li><a href>Arduino projects</a></li>
+            <li><a href>Linux</a></li>
           </ul>
         </div>
         <div id="others">
-          <strong>Others</strong>
+          <p>Others</p>
           <ul>
-            <li>Chess</li>
-            <li>sololearn</li>
-            <li>Codepen</li>
-            <li>Quora</li>
-            <li>Games</li>
+            <li><a href>Chess</a></li>
+            <li><a href>sololearn</a></li>
+            <li><a href>Codepen</a></li>
+            <li><a href>Quora</a></li>
+            <li><a href>Games</a></li>
           </ul>
         </div>
       </div>
