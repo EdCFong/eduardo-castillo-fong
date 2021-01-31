@@ -92,7 +92,7 @@ a
 {   
   display: grid;  
   grid-template-columns: 50% 50%;
-  height: 35em;
+  height: auto;
 }
 /* Left  - WhoIam ***************************************************** */
 #whoIam
@@ -136,53 +136,57 @@ a
   transform: rotate(90deg);
 }
 
-/* Right  - Certifications  ******************************************* */
-#certifications
-{
-  background-color: var(--main-color) ;
-}
+/* Right  - Skills  *************************************************** */
 
-
-/*  Skills   **********************************************************  */
 #skillsSection
 {
-  color: var(--main-color);
+  background-color: var(--main-color);
+  padding: 3vh 5vw;
+  color:  var(--text-color); 
 }
 #skills
 {
-  display: grid;
-  grid-template-columns: repeat(4,minmax(10vw, 30vw));
-  grid-auto-flow: row;
-  grid-gap: 2em;
+  display: flex;
+  flex-direction: column;
+  border: 1.7px dashed var(--main-border-color); 
+  padding: 2em;
 }
   
 .skill
 {
-  color:  var(--text-color);  
   display: flex;
   align-items: center;
-  max-width: 30vw;
-  box-shadow: -7px 7px 9px -1px rgba(14, 13, 13, 0.75);
-  padding: 0.5em;
+  padding: 0.35em;
   border-radius: var(--main-border-radius);
 }
 .skill img
 {
-  height: 5vh;
+  height: 3vh;
   width: 2.5vw;
   border-radius: var(--main-border-radius); 
 }
 .skill i
 {
   text-align: left;
-  margin-left: 3%;
+  margin-left: 5%;
+}
+
+/*  Certifications   **********************************************************  */
+#certifications
+{
+  color: var(--text-color);
+  background-color: var(--main-color);
+}
+#certifications h1
+{
+  margin-left: 2vw;
 }
 
 /* Projects     ***************************************************************** */
 #projectsSection
 {
   background-color: var(--main-color) ;
-  height: 90vh;
+  height: auto;
 }
 #projectsSection h1
 {
@@ -198,19 +202,21 @@ a
 }
 #projects
 {
- margin-top: 6vh;
- display: flex;
- flex-flow: row wrap;
- justify-content: space-around;
+ margin: 6vh 3vw 0vh 3vw; 
+ height: auto;
+ display: grid;
+ grid-template-columns: repeat(auto-fit,minmax(14em, 1fr));
+ grid-gap: 1.5em;
 }
 .project
 {
   background-color: var(--second-color);
-  width: 15vw; 
   color: var(--main-color);
   box-shadow: -7px 7px 9px -5px rgba(14, 13, 13, 0.75);
   border: 2px solid var(--second-border-color);
-  border-radius: var(--main-border-radius);
+  border-radius: var(--main-border-radius); 
+  display: flex;
+  flex-direction: column;
 }
 .project :hover
 {
@@ -223,7 +229,8 @@ a
 }
 .project div
 {
-  margin: 10px;
+  margin: 10px;  
+  height: 100%;
   background:  var(--div-background);
   border: 1px solid var(--second-border-color);
   border-radius: var(--second-border-radius);
@@ -292,11 +299,10 @@ a
   background: var(--div-background);
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(15vw, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(9em, 1fr));
   grid-gap: 1em;
-  padding: 1em 1em 1em 2.8em;
+  padding: 1em 1.5em;
   align-items: center;
-  justify-content: space-around; 
 }
 #social_media_box p
 {
@@ -306,7 +312,6 @@ a
 .social_media
 {
   height: 15vh; 
-  width: 10vw;
   background: var(--div-background);
   color: var(--div-text-color); 
   text-align: center;
@@ -314,14 +319,13 @@ a
 }
 .social_media:hover
 {
-  transform:scale(1.18);
+  transform:scale(1.15);
 }
 .social_media_icon
 {
   height: 8vh;
   min-width: 6vw;
   border-radius: 5px;
- 
 }
 #FreeCodeCamp_icon
 {

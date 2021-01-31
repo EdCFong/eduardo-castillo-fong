@@ -30,7 +30,7 @@ function App() {
       <Head />
       <div id="container">
         <AboutMe />
-        <Skills />
+        <Certifications />
         <Projects />
       </div>
       <Information />
@@ -42,15 +42,15 @@ function Head() {
   return (
     <div id="head">
       <nav>
-          <ul>
-            <li><a href>Story</a></li>
-            <li><a href>Blog</a></li>
-            <li><a href>Tutorials</a></li>
-            <li><a href>Tools</a></li>
-            <li><a href>Linux</a></li>
-          </ul>
-        </nav>
-      <div id="presentationMessage">        
+        <ul>
+          <li><a href>Story</a></li>
+          <li><a href>Blog</a></li>
+          <li><a href>Tutorials</a></li>
+          <li><a href>Tools</a></li>
+          <li><a href>Linux</a></li>
+        </ul>
+      </nav>
+      <div id="presentationMessage">
         <h1>Hi, I'm Eduardo Castillo Fong</h1>
         <h3><strong>&gt;_</strong> software developer and computer enthusiast</h3>
       </div>
@@ -62,7 +62,7 @@ function AboutMe() {
   return (
     <div id="Me">
       <WhoIam />
-      <Certifications />
+      <Skills />
     </div>
   )
 }
@@ -92,14 +92,6 @@ function WhoIam() {
   )
 }
 
-function Certifications() {
-  return (
-    <div id="certifications">
-
-    </div>
-  )
-}
-
 function Skills() {
   return (
     <div id="skillsSection">
@@ -124,6 +116,35 @@ function Skill(props) {
     <div className="skill">
       <img src={props.logo} alt={props.alt} />
       <i>{props.name}</i>
+    </div>
+  )
+}
+
+function Certifications() {
+  return (
+    <div id="certifications">
+      <h1>Certifications</h1>
+      <div id="certificationsContainer">
+        <CertificationBoard />
+      </div>
+    </div>
+  )
+}
+
+function CertificationBoard() {
+  return (
+    <div className="certificationBoard">
+      <Certification name  certificationImagen/>
+      <Certification />
+      <Certification />
+    </div>
+  )
+}
+
+function Certification(props) {
+  return (
+    <div className="certification">
+
     </div>
   )
 }
@@ -160,7 +181,7 @@ function Projects() {
           </div>
         </div>
         <div className="project">
-          <h2>Random Quote Machine</h2>
+          <h2>Quote Machine</h2>
           <div>
             <a href="https://codepen.io/edcfong/full/jjXYZV">
               <img src={QuotesMachine_img} alt="Random Quote Machine" />
@@ -247,7 +268,7 @@ function Information() {
         <div id="personalInformation">
           <p>Information</p>
           <ul>
-            <li><a href>Story</a></li>  
+            <li><a href>Story</a></li>
             <li><a href>Path</a></li>
             <li><a href>All projects</a></li>
             <li><a href>All certifications</a></li>
