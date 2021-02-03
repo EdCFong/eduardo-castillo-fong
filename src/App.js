@@ -20,6 +20,12 @@ import FCC_img from './imagen/Profiles - FreeCodeCamp.png';
 import Github_img from './imagen/Profiles - Github.png';
 import HackerRank_img from './imagen/Profiles - HackerRank.png';
 import Linkedin_img from './imagen/Profiles - Linkedin.png';
+import FCC_respWebDesign_img from './imagen/Certificate - ResponsiveWebDesign.png';
+import FCC_JS_img from './imagen/Certificate - JavaScriptAlgorithmsAndDataStructures.png';
+import FCC_frontLibr_img from './imagen/Certificate - ResponsiveWebDesign.png';
+import Sololearn_Csharp_img from './imagen/Certificate - C# Tutorial.png';
+import Sololearn_HTML_img from './imagen/Certificate - HTML Fundamentals.png'; 
+import Sololearn_CSS_img from './imagen/Certificate - CSS Fundamentals.png'; 
 
 
 
@@ -120,23 +126,35 @@ function Skill(props) {
   )
 }
 
+class certf {
+  constructor(name, issuer, certificationImagen) {
+    this.name = name;
+    this.issuer = issuer;
+    this.certificationImagen = certificationImagen;
+  }
+}
+
 function Certifications() {
+  let certificationCollection = [];
+  certificationCollection.push(new certf("Responsive Web Design","FreeCodeCamp", {FCC_respWebDesign_img}));
+  certificationCollection.push(new certf("JavaScript Algorithms and Data Structures","FreeCodeCamp", {FCC_JS_img}));
+  certificationCollection.push(new certf("Front End Libraries","FreeCodeCamp", {FCC_frontLibr_img}));
   return (
     <div id="certifications">
       <h1>Certifications</h1>
       <div id="certificationsContainer">
-        <CertificationBoard />
+        <CertificationBoard certf0={certificationCollection[0]} certf1={certificationCollection[1]} certf2={certificationCollection[2]}/>
       </div>
     </div>
   )
 }
 
-function CertificationBoard() {
+function CertificationBoard(props) {
   return (
     <div className="certificationBoard">
-      <Certification name  certificationImagen/>
-      <Certification />
-      <Certification />
+      <Certification name={props.certf0.name} issuer={props.certf0.issuer} certImagen={props.certf0.certificationImagen}/>
+      <Certification name={props.certf1.name} issuer={props.certf1.issuer} certImagen={props.certf1.certificationImagen}/>
+      <Certification name={props.certf2.name} issuer={props.certf2.issuer} certImagen={props.certf2.certificationImagen}/>
     </div>
   )
 }
