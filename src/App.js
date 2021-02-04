@@ -23,9 +23,9 @@ import Linkedin_img from './imagen/Profiles - Linkedin.png';
 import FCC_respWebDesign_img from './imagen/Certificate - ResponsiveWebDesign.png';
 import FCC_JS_img from './imagen/Certificate - JavaScriptAlgorithmsAndDataStructures.png';
 import FCC_frontLibr_img from './imagen/Certificate - ResponsiveWebDesign.png';
-import Sololearn_Csharp_img from './imagen/Certificate - C# Tutorial.png';
-import Sololearn_HTML_img from './imagen/Certificate - HTML Fundamentals.png'; 
-import Sololearn_CSS_img from './imagen/Certificate - CSS Fundamentals.png'; 
+import Sololearn_Csharp_img from './imagen/Certificate - CSharp Tutorial.png';
+import Sololearn_HTML_img from './imagen/Certificate - HTML Fundamentals.png';
+import Sololearn_CSS_img from './imagen/Certificate - CSS Fundamentals.png';
 
 
 
@@ -127,23 +127,33 @@ function Skill(props) {
 }
 
 class certf {
-  constructor(name, issuer, certificationImagen) {
+  constructor(name, issuer, certificationImagen, altImagen) {
     this.name = name;
     this.issuer = issuer;
     this.certificationImagen = certificationImagen;
+    this.altImagen = altImagen;
   }
 }
 
 function Certifications() {
   let certificationCollection = [];
-  certificationCollection.push(new certf("Responsive Web Design","FreeCodeCamp", {FCC_respWebDesign_img}));
-  certificationCollection.push(new certf("JavaScript Algorithms and Data Structures","FreeCodeCamp", {FCC_JS_img}));
-  certificationCollection.push(new certf("Front End Libraries","FreeCodeCamp", {FCC_frontLibr_img}));
+  certificationCollection.push(new certf("Responsive Web Design", "FreeCodeCamp", FCC_respWebDesign_img,"Responsive Web Design Certificate"));
+  certificationCollection.push(new certf("JavaScript Algorithms and Data Structures", "FreeCodeCamp", FCC_JS_img, "JavaScript Algorithms Certificate"));
+  certificationCollection.push(new certf("Front End Libraries", "FreeCodeCamp", FCC_frontLibr_img, "Front End Libraries Certificate"));
+  certificationCollection.push(new certf("C# Tutorial", "Sololearn", Sololearn_Csharp_img, "C# Tutorial Certificate"));
+  certificationCollection.push(new certf("HTML Fundamentals", "Sololearn", Sololearn_HTML_img, "HTML Fundamentals Certificate"));
+  certificationCollection.push(new certf("CSS Fundamentals", "Sololearn", Sololearn_CSS_img, "CSS Fundamentals Certificate"));
+
   return (
     <div id="certifications">
       <h1>Certifications</h1>
       <div id="certificationsContainer">
-        <CertificationBoard certf0={certificationCollection[0]} certf1={certificationCollection[1]} certf2={certificationCollection[2]}/>
+        <CertificationBoard id="board1" certf0={certificationCollection[0]} certf1={certificationCollection[1]} certf2={certificationCollection[2]} />
+        <CertificationBoard id="board2" certf0={certificationCollection[3]} certf1={certificationCollection[4]} certf2={certificationCollection[5]} />
+      </div>
+      <div className="certificationsDots">
+        <div id="dot1" className="dot" href="#board1"></div>
+        <div id="dot2" className="dot" href="#board2"></div>
       </div>
     </div>
   )
@@ -152,9 +162,9 @@ function Certifications() {
 function CertificationBoard(props) {
   return (
     <div className="certificationBoard">
-      <Certification name={props.certf0.name} issuer={props.certf0.issuer} certImagen={props.certf0.certificationImagen}/>
-      <Certification name={props.certf1.name} issuer={props.certf1.issuer} certImagen={props.certf1.certificationImagen}/>
-      <Certification name={props.certf2.name} issuer={props.certf2.issuer} certImagen={props.certf2.certificationImagen}/>
+      <Certification name={props.certf0.name} issuer={props.certf0.issuer} certImagen={props.certf0.certificationImagen} alt={props.certf0.altImagen}/>
+      <Certification name={props.certf1.name} issuer={props.certf1.issuer} certImagen={props.certf1.certificationImagen} alt={props.certf1.altImagen}/>
+      <Certification name={props.certf2.name} issuer={props.certf2.issuer} certImagen={props.certf2.certificationImagen} alt={props.certf2.altImagen}/>
     </div>
   )
 }
@@ -162,7 +172,10 @@ function CertificationBoard(props) {
 function Certification(props) {
   return (
     <div className="certification">
-
+      <p>{props.name}</p>
+      <a>From {props.issuer}</a>
+      <img src={props.certImagen} alt={props.alt} />
+      
     </div>
   )
 }

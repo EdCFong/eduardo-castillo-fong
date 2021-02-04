@@ -13,12 +13,7 @@ body
   --text-color: rgb(203, 220, 241); 
   --main-border-color: rgb(0, 0, 0);
   --second-border-color: rgb(2, 16, 78);
-  --link-color: rgb(245, 234, 200);
-  --link-color-stronger: rgb(236, 222, 59); 
-  /* For projects, medias and certification divs: */
-  --div-background:  rgb(179, 207, 250);
-  --div-text-color: rgb(4, 13, 53);
-  
+  --link-color:rgb(6, 8, 163);  
 
   --main-border-radius: 5px;
   --second-border-radius: 3px;
@@ -44,7 +39,7 @@ a
 }
 #head strong
 {
-  color: var(--link-color-stronger) ; 
+  color: var(--link-color) ; 
 }
 #presentationMessage
 {
@@ -70,7 +65,8 @@ a
 }
 #head a
 {
-  color: var(--link-color-stronger);
+  color: var(--link-color);
+  
 }
 
 /* Container **************************************** */ 
@@ -122,6 +118,10 @@ a
 {
   margin: 5% 10% 5% 10%;
   text-align: left;
+}
+#whoIam a
+{
+  color: var(--main-color)
 }
 #arrow 
 {
@@ -181,6 +181,71 @@ a
 {
   margin-left: 2vw;
 }
+#certificationsContainer
+{
+  display: grid;   
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  overflow-x: hidden;
+  width: 80vw;
+}
+.certificationBoard
+{
+  margin: 4vh 2vw 0vh 2vw;    
+  width: 76vw;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(18em, 1fr));
+  grid-gap: 1.5em;
+  justify-items: center;
+  padding-bottom: 1em;
+}
+.certification
+{
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--main-border-radius); 
+  box-shadow: -7px 7px 9px -5px rgba(14, 13, 13, 0.75);
+  background:  var(--second-color);
+}
+.certification img
+{
+  height:25vh;
+  margin: 0.5em; 
+  border-radius: var(--second-border-radius);  
+}
+.certification p
+{
+  margin: 0.5em 1em 0em 0.7em; 
+}
+.certification a
+{
+  margin: 0em 0.9em 0.5em 0.9em; 
+  color: var(--main-color);
+  font-size: 0.8em; 
+}
+.certificationsDots
+{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /* Reset styles */
+  list-style-type: none;
+  padding-bottom: 20px;
+  padding-top: 40px;
+}
+.dot 
+{
+  /* Rounded border */
+  border-radius: 9999px;
+  height: 12px;
+  width: 12px; 
+  border: 1px solid rgba(0, 0, 0, .3);
+
+  /* Spacing between dots */ 
+  margin: 0 4px;
+}
 
 /* Projects     ***************************************************************** */
 #projectsSection
@@ -210,7 +275,7 @@ a
 }
 .project
 {
-  background-color: var(--second-color);
+  background-color: rgb(0, 0, 0);
   color: var(--main-color);
   box-shadow: -7px 7px 9px -5px rgba(14, 13, 13, 0.75);
   border: 2px solid var(--second-border-color);
@@ -231,10 +296,10 @@ a
 {
   margin: 10px;  
   height: 100%;
-  background:  var(--div-background);
-  border: 1px solid var(--second-border-color);
+  background:  var(--second-color);
+  
   border-radius: var(--second-border-radius);
-  color: var(--div-text-color);
+  color: var(--text-color);
 }
 .project img
 {
@@ -296,7 +361,7 @@ a
 #social_media_box
 {
   border-radius: var(--main-border-radius);
-  background: var(--div-background);
+  background: var(--second-color);
   height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(9em, 1fr));
@@ -312,8 +377,8 @@ a
 .social_media
 {
   height: 15vh; 
-  background: var(--div-background);
-  color: var(--div-text-color); 
+  background: var(--second-color);
+  color: var(--text-color); 
   text-align: center;
   padding-top: 2vh;
 }
@@ -358,7 +423,7 @@ a
 {
   font-size: 1.2em;
   font-weight: bold;
-  color: var(--div-text-color);
+  color: black;
 }
 #moreLinks a
 {
