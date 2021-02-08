@@ -13,7 +13,8 @@ body
   --text-color: rgb(203, 220, 241); 
   --main-border-color: rgb(0, 0, 0);
   --second-border-color: rgb(2, 16, 78);
-  --link-color:rgb(6, 8, 163);  
+  --link-color: rgb(245, 234, 200);
+  --link-color-stronger: rgb(228, 231, 54);  
 
   --main-border-radius: 5px;
   --second-border-radius: 3px;
@@ -39,7 +40,7 @@ a
 }
 #head strong
 {
-  color: var(--link-color) ; 
+  color: var(--link-color-stronger) ; 
 }
 #presentationMessage
 {
@@ -65,7 +66,7 @@ a
 }
 #head a
 {
-  color: var(--link-color);
+  color: var(--link-color-stronger);
   
 }
 
@@ -119,15 +120,12 @@ a
   margin: 5% 10% 5% 10%;
   text-align: left;
 }
-#whoIam a
-{
-  color: var(--main-color)
-}
+
 #arrow 
 {
   margin-bottom: 20vh;
   margin-left: 40%;
-  color: var(--link-color) ; 
+  color: var(--main-color) ; 
   text-align: center;
   font-size: 3em;
 }
@@ -195,7 +193,7 @@ a
   width: 76vw;
   height: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(18em, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(20em, 1fr));
   grid-gap: 1.5em;
   justify-items: center;
   padding-bottom: 1em;
@@ -221,7 +219,7 @@ a
 .certification a
 {
   margin: 0em 0.9em 0.5em 0.9em; 
-  color: var(--main-color);
+
   font-size: 0.8em; 
 }
 .certificationsDots
@@ -320,11 +318,6 @@ a
   text-align: left;
   font-size: 15px;
 }
-.project a
-{
-  color: var(--main-color);
-}
-
 
 
 /* Information    ****************************************************************************** */
@@ -378,7 +371,7 @@ a
 {
   height: 15vh; 
   background: var(--second-color);
-  color: var(--text-color); 
+  color: var(--link-color); 
   text-align: center;
   padding-top: 2vh;
 }
@@ -427,7 +420,7 @@ a
 }
 #moreLinks a
 {
- color: var(--text-color);
+ color: var(--link-color-stronger);
  margin-left: 0.4em;
  margin-top: 0.2em;
 }

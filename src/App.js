@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {DotAnimation} from './gsap.js'
 
 import MyPhoto_img from './imagen/Myself.png';
 import CSharp_img from './imagen/Skills - CSharp.png';
@@ -173,7 +174,7 @@ function Certification(props) {
   return (
     <div className="certification">
       <p>{props.name}</p>
-      <a>From {props.issuer}</a>
+      <a href>From {props.issuer}</a>
       <img src={props.certImagen} alt={props.alt} />
       
     </div>
@@ -331,6 +332,7 @@ function Information() {
   )
 }
 
+//DotAnimation("#dot1","#dot2");
 
 
 export default App;
