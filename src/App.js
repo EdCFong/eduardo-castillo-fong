@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {DotAnimation} from './gsap.js'
+import { DotAnimation } from './gsap.js'
 
 import MyPhoto_img from './imagen/Myself.png';
 import CSharp_img from './imagen/Skills - CSharp.png';
@@ -27,6 +27,7 @@ import FCC_frontLibr_img from './imagen/Certificate - ResponsiveWebDesign.png';
 import Sololearn_Csharp_img from './imagen/Certificate - CSharp Tutorial.png';
 import Sololearn_HTML_img from './imagen/Certificate - HTML Fundamentals.png';
 import Sololearn_CSS_img from './imagen/Certificate - CSS Fundamentals.png';
+import { Component } from 'react';
 
 
 
@@ -92,7 +93,7 @@ function WhoIam() {
         every day new cool technologies.</p>
       <p>Do you want to see what I'm doing? Let's take a look below.</p>
 
-      <a id="arrow" href="#achievements"><i class="fas fa-arrow-right"></i></a>
+      <a id="arrow" href="#projects"><i class="fas fa-arrow-right"></i></a>
 
 
     </div>
@@ -136,38 +137,65 @@ class certf {
   }
 }
 
-function Certifications() {
-  let certificationCollection = [];
-  certificationCollection.push(new certf("Responsive Web Design", "FreeCodeCamp", FCC_respWebDesign_img,"Responsive Web Design Certificate"));
-  certificationCollection.push(new certf("JavaScript Algorithms and Data Structures", "FreeCodeCamp", FCC_JS_img, "JavaScript Algorithms Certificate"));
-  certificationCollection.push(new certf("Front End Libraries", "FreeCodeCamp", FCC_frontLibr_img, "Front End Libraries Certificate"));
-  certificationCollection.push(new certf("C# Tutorial", "Sololearn", Sololearn_Csharp_img, "C# Tutorial Certificate"));
-  certificationCollection.push(new certf("HTML Fundamentals", "Sololearn", Sololearn_HTML_img, "HTML Fundamentals Certificate"));
-  certificationCollection.push(new certf("CSS Fundamentals", "Sololearn", Sololearn_CSS_img, "CSS Fundamentals Certificate"));
-
-  return (
-    <div id="certifications">
-      <h1>Certifications</h1>
-      <div id="certificationsContainer">
-        <CertificationBoard id="board1" certf0={certificationCollection[0]} certf1={certificationCollection[1]} certf2={certificationCollection[2]} />
-        <CertificationBoard id="board2" certf0={certificationCollection[3]} certf1={certificationCollection[4]} certf2={certificationCollection[5]} />
+class Certifications extends Component {
+  constructor(props) {
+    super(props);
+    this.dot1 = null;
+    this.dot2 = null;
+    this.animation = null;
+  }
+  componentDidMount() {
+    this.animation = DotAnimation(this.dot1, this.dot2);
+  }
+  render() {
+    let certificationCollection = [];
+    certificationCollection.push(new certf("Responsive Web Design", "FreeCodeCamp", FCC_respWebDesign_img, "Responsive Web Design Certificate"));
+    certificationCollection.push(new certf("JavaScript Algorithms and Data Structures", "FreeCodeCamp", FCC_JS_img, "JavaScript Algorithms Certificate"));
+    certificationCollection.push(new certf("Front End Libraries", "FreeCodeCamp", FCC_frontLibr_img, "Front End Libraries Certificate"));
+    certificationCollection.push(new certf("C# Tutorial", "Sololearn", Sololearn_Csharp_img, "C# Tutorial Certificate"));
+    certificationCollection.push(new certf("HTML Fundamentals", "Sololearn", Sololearn_HTML_img, "HTML Fundamentals Certificate"));
+    certificationCollection.push(new certf("CSS Fundamentals", "Sololearn", Sololearn_CSS_img, "CSS Fundamentals Certificate"));
+    return (
+      <div id="certifications">
+        <h1>Certifications</h1>
+        <div id="certificationsContainer">
+          <CertificationBoard id="board1" certf0={certificationCollection[0]} certf1={certificationCollection[1]} certf2={certificationCollection[2]} />
+          <CertificationBoard id="board2" certf0={certificationCollection[3]} certf1={certificationCollection[4]} certf2={certificationCollection[5]} />
+        </div>
+        <div className="certificationsDots">
+          <a className="dot" href="#board1" ref={a => this.dot1 = a}></a>
+          <a className="dot" href="#board2" ref={a => this.dot2 = a}></a>
+        </div>
       </div>
-      <div className="certificationsDots">
-        <div id="dot1" className="dot" href="#board1"></div>
-        <div id="dot2" className="dot" href="#board2"></div>
-      </div>
-    </div>
-  )
+    );
+  }
 }
 
-function CertificationBoard(props) {
-  return (
-    <div className="certificationBoard">
-      <Certification name={props.certf0.name} issuer={props.certf0.issuer} certImagen={props.certf0.certificationImagen} alt={props.certf0.altImagen}/>
-      <Certification name={props.certf1.name} issuer={props.certf1.issuer} certImagen={props.certf1.certificationImagen} alt={props.certf1.altImagen}/>
-      <Certification name={props.certf2.name} issuer={props.certf2.issuer} certImagen={props.certf2.certificationImagen} alt={props.certf2.altImagen}/>
+class CertificationBoard extends Component {
+  constructor(props) {
+    super(props);
+    this.name0 = props.certf0.name;
+    this.name1 = props.certf1.name;
+    this.name2 = props.certf2.name;
+    this.issuer0 = props.certf0.issuer;
+    this.issuer1 = props.certf1.issuer;
+    this.issuer2 = props.certf2.issuer;
+    this.certImagen0 = props.certf0.certificationImagen;
+    this.certImagen1 = props.certf1.certificationImagen;
+    this.certImagen2 = props.certf2.certificationImagen;
+    this.alt0 = props.certf0.altImagen;
+    this.alt1 = props.certf1.altImagen;
+    this.alt2 = props.certf2.altImagen;
+  }
+  render(){
+    return(
+      <div className = "certificationBoard" >
+      <Certification name={this.name0} issuer={this.issuer0} certImagen={this.certImagen0} alt={this.alt0} />
+      <Certification name={this.name1} issuer={this.issuer1} certImagen={this.certImagen1} alt={this.alt1} />
+      <Certification name={this.name2} issuer={this.issuer2} certImagen={this.certImagen2} alt={this.alt2} />
     </div>
-  )
+    );
+  }
 }
 
 function Certification(props) {
@@ -176,7 +204,7 @@ function Certification(props) {
       <p>{props.name}</p>
       <a href>From {props.issuer}</a>
       <img src={props.certImagen} alt={props.alt} />
-      
+
     </div>
   )
 }

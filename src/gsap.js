@@ -12,7 +12,7 @@ export function DotAnimation(dot1, dot2) {
         paused: true
     });
     //play animation
-    this.dot1.onclick = () => {
+    dot1.onclick = () => {
         dot1Activate.play();
         dot2Activate.reverse();
     }
@@ -26,7 +26,7 @@ export function DotAnimation(dot1, dot2) {
         paused: true
     });
     //play animation
-    document.querySelector(dot2).onclick = () => {
+    dot2.onclick = () => {
         dot2Activate.play();
         dot1Activate.reverse();
     }
