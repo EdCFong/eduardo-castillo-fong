@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { DotAnimation } from './gsap.js'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import MyPhoto_img from './imagen/Myself.png';
 import CSharp_img from './imagen/Skills - CSharp.png';
@@ -158,10 +159,12 @@ class Certifications extends Component {
     return (
       <div id="certifications">
         <h1>Certifications</h1>
-        <div id="certificationsContainer">
-          <CertificationBoard id="board1" certf0={certificationCollection[0]} certf1={certificationCollection[1]} certf2={certificationCollection[2]} />
-          <CertificationBoard id="board2" certf0={certificationCollection[3]} certf1={certificationCollection[4]} certf2={certificationCollection[5]} />
-        </div>
+        <Router>
+          <div id="certificationsContainer">
+            <CertificationBoard id="board1" certf0={certificationCollection[0]} certf1={certificationCollection[1]} certf2={certificationCollection[2]} />
+            <CertificationBoard id="board2" certf0={certificationCollection[3]} certf1={certificationCollection[4]} certf2={certificationCollection[5]} />
+          </div>
+        </Router>
         <div className="certificationsDots">
           <a className="dot" href="#board1" ref={a => this.dot1 = a}></a>
           <a className="dot" href="#board2" ref={a => this.dot2 = a}></a>
@@ -187,13 +190,13 @@ class CertificationBoard extends Component {
     this.alt1 = props.certf1.altImagen;
     this.alt2 = props.certf2.altImagen;
   }
-  render(){
-    return(
-      <div className = "certificationBoard" >
-      <Certification name={this.name0} issuer={this.issuer0} certImagen={this.certImagen0} alt={this.alt0} />
-      <Certification name={this.name1} issuer={this.issuer1} certImagen={this.certImagen1} alt={this.alt1} />
-      <Certification name={this.name2} issuer={this.issuer2} certImagen={this.certImagen2} alt={this.alt2} />
-    </div>
+  render() {
+    return (
+      <div className="certificationBoard" >
+        <Certification name={this.name0} issuer={this.issuer0} certImagen={this.certImagen0} alt={this.alt0} />
+        <Certification name={this.name1} issuer={this.issuer1} certImagen={this.certImagen1} alt={this.alt1} />
+        <Certification name={this.name2} issuer={this.issuer2} certImagen={this.certImagen2} alt={this.alt2} />
+      </div>
     );
   }
 }
@@ -204,7 +207,6 @@ function Certification(props) {
       <p>{props.name}</p>
       <a href>From {props.issuer}</a>
       <img src={props.certImagen} alt={props.alt} />
-
     </div>
   )
 }
